@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.InscriptionController">
+   <children>
+      <Pane onDragDetected="#dejaInscrit" prefHeight="660.0" prefWidth="300.0">
+         <children>
+            <Label layoutX="85.0" layoutY="40.0" text="Inscription">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <TextField id="txId" fx:id="pseudo" layoutX="47.0" layoutY="123.0" prefHeight="35.0" prefWidth="206.0" promptText="Pseudo" />
+            <TextField id="txId" fx:id="userLastName" layoutX="47.0" layoutY="178.0" prefHeight="35.0" prefWidth="206.0" promptText="Nom" />
+            <TextField id="txId" fx:id="userFirstName" layoutX="47.0" layoutY="235.0" prefHeight="35.0" prefWidth="206.0" promptText="Prénom" />
+            <TextField id="txId" fx:id="mailAdress" layoutX="47.0" layoutY="290.0" prefHeight="35.0" prefWidth="206.0" promptText="Email email@???.com" />
+            <DatePicker fx:id="date" layoutX="47.0" layoutY="346.0" prefHeight="35.0" prefWidth="206.0" promptText="Date de Naissance" />
+            <PasswordField id="txPwd" fx:id="passWord" layoutX="47.0" layoutY="401.0" prefHeight="35.0" prefWidth="206.0" promptText="Mot de passe" />
+            <PasswordField id="txPwd" fx:id="passWordVerif" layoutX="47.0" layoutY="457.0" prefHeight="35.0" prefWidth="206.0" promptText="Confirmation Mot de passe" />
+            <RadioButton ellipsisString="" layoutX="81.0" layoutY="517.0" mnemonicParsing="false" text="Homme">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Sex" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton ellipsisString="" layoutX="157.0" layoutY="517.0" mnemonicParsing="false" text="Femme" toggleGroup="$Sex" />
+            <Button id="btConnect" fx:id="signIn" layoutX="86.0" layoutY="598.0" mnemonicParsing="false" onAction="#inscription" prefHeight="35.0" prefWidth="130.0" text="Inscription" />
+            <Button layoutX="118.0" layoutY="551.0" mnemonicParsing="false" onAction="#importAvatar" prefHeight="28.0" prefWidth="63.0" text="Avatar" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
