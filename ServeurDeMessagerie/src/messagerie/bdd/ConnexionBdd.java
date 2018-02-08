@@ -5,13 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Cr�ation d'un singleton
+ * Création d'un singleton
  * @autor Thibaut MASSELIN
  */
 
 public class ConnexionBdd {
 	private static Connection connection = null;
 	private final static String URL = "jdbc:mysql://localhost/messagerie";
+	// utilisateur crée dans la base de données pour permetre de sécifier ses accès
 	private final static String USER = "client";
 	private final static String PASSWRD = "fVvyx7a2usuwnfNr";
 	
@@ -25,7 +26,7 @@ public class ConnexionBdd {
 			connection = (Connection) DriverManager.getConnection(URL, USER, PASSWRD);
 			
 		} catch (ClassNotFoundException |SQLException e) {
-			throw new IllegalStateException("Imposible de se connecter � la BDD!");
+			throw new IllegalStateException("Imposible de se connecter à la BDD!");
 		}
 	}
 
@@ -34,7 +35,7 @@ public class ConnexionBdd {
 	 * @return Connection
 	 */
 	public static Connection getConnexion(){
-		// si la connexion est null connexion par d�faut
+		// si la connexion est null connexion par défaut
 		if (connection == null) {
 			ConnexionBdd.getInstance();
 		}		
